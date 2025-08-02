@@ -1,0 +1,328 @@
+:root {
+  --primary: #7DAFC7;
+  --secondary: #B2D0DE;
+  --background: #E8F1F5;
+  --text-light: #1a1a1a;
+  --white: #FFFFFF;
+}
+/* General Page Layout */
+/* General Page Layout */
+.analysis-page {
+  padding: 2rem;
+  background-color: #f0f2f5; /* Light background for the page */
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif; /* Use Inter font */
+}
+
+/* Tabs for Navigation */
+.analysis-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.tab-btn {
+  background-color: #e0e6ed;
+  color: #333;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.tab-btn:hover {
+  background-color: #d1d8e0;
+  transform: translateY(-2px);
+}
+
+.tab-btn:active {
+  background-color: #c2c9d1;
+  transform: translateY(0);
+}
+
+/* Section Containers */
+.section-container {
+  background-color: #e6f0f7; /* Light blue background for sections */
+  padding: 1.5rem;
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* KPI Grid */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted minwidth for better content fit */
+  gap: 1.5rem;
+}
+
+.kpi-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  text-align: center; /* Center content as per image */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to start */
+  min-height: 250px; /* Increased min-height to accommodate points */
+}
+
+.kpi-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.kpi-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #007bff; /* A primary blue color */
+  margin-bottom: 0.5rem;
+  line-height: 1.2; /* Adjust line height for large numbers */
+}
+
+/* Specific styling for remarks formatted as points */
+.kpi-remark-points {
+    font-size: 0.9rem;
+    color: #777;
+    text-align: left; /* Align points to the left within the card */
+    margin-top: 1rem;
+    flex-grow: 1; /* Allows it to take available space */
+}
+
+.kpi-remark-points ul {
+    list-style: disc; /* Use bullet points */
+    padding-left: 20px; /* Indent bullet points */
+    margin: 0;
+}
+
+.kpi-remark-points li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.kpi-remark-points p {
+    text-align: center; /* Fallback text centered if not points */
+}
+
+
+/* Competitor Grid */
+.competitor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.competitor-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Keeps content centered horizontally */
+  justify-content: center; /* ADD THIS LINE: Centers content vertically */
+  text-align: center; /* Ensures text itself is centered */
+  position: relative;
+  min-height: 180px; /* Keep minimum height for consistent card size */
+}
+
+.competitor-rank {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffc107; /* Gold-like color */
+  color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1rem;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.competitor-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.competitor-details {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.competitor-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tag {
+  background-color: #e0f7fa;
+  color: #00796b;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Sentiment Grid */
+.sentiment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.sentiment-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px; /* Ensure consistent height */
+}
+
+.sentiment-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.sentiment-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #28a745;
+  margin-bottom: 0.5rem;
+}
+
+.sentiment-remark {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 1rem;
+  flex-grow: 1; /* Allow remarks to take space */
+}
+
+.progress-bar-container {
+  width: 100%;
+  background-color: #e9ecef;
+  border-radius: 5px;
+  height: 10px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.5s ease-in-out;
+}
+
+.progress-label {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* Compliance Grid */
+.compliance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.compliance-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 120px; /* Consistent height */
+}
+
+.compliance-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.compliance-status {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #007bff;
+}
+
+/* Overall Summary Card */
+.summary-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  line-height: 1.6;
+  color: #333;
+}
+
+/* No data message */
+.no-data-msg {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  margin-top: 2rem;
+}
+
+.error-msg {
+  color: #dc3545;
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .analysis-tabs {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .tab-btn {
+    width: 100%;
+  }
+
+  .kpi-grid, .competitor-grid, .sentiment-grid, .compliance-grid {
+    grid-template-columns: 1fr;
+  }
+}

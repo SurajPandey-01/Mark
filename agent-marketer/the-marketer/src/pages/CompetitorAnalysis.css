@@ -1,0 +1,479 @@
+/* Base styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f7fa; /* Light background for the overall page */
+  color: #333;
+}
+
+.competitor-page {
+  padding: 6rem 2rem 2rem; /* space for navbar on top */
+  min-height: 100vh;
+  max-width: 1200px; /* Max width for content */
+  margin: 0 auto; /* Center the content */
+}
+
+.page-main-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Section styles */
+.section {
+  padding: 2rem;
+  margin-bottom: 2.5rem; /* Increased margin for separation */
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease-in-out;
+}
+
+.section-light {
+  background-color: #ebf1f5; /* Light blue-gray */
+}
+
+.section-dark {
+  background-color: #b2d0de; /* Slightly darker blue-gray */
+}
+
+.section-title {
+  font-size: 1.8rem; /* Slightly larger title */
+  font-weight: 700; /* Bolder */
+  margin-bottom: 1.8rem; /* Increased margin */
+  color: #2c3e50; /* Darker text for titles */
+  text-align: center; /* Center section titles */
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Generic Card styles */
+.card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 120px; /* Ensure consistent height */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.card h3 {
+  font-size: 1.3rem; /* Slightly larger heading */
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Competitor Entry Card specific styles */
+.competitor-entry-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Horizontally center content */
+  text-align: center; /* Center text within elements */
+  position: relative;
+  min-height: 200px; /* Give it enough height to layout */
+  justify-content: space-between; /* NEW: Distribute space between items (name, details, tags) */
+}
+
+.competitor-entry-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.competitor-icon { /* This is the rank icon */
+  font-size: 2.5rem;
+  /* Removed margin-bottom here, as justify-content will handle spacing */
+  position: absolute; /* Keep it absolutely positioned for the top-center badge */
+  top: -15px; /* Adjust top position to place above the card */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffc107; /* Example background for the icon/rank */
+  color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1rem;
+  border: 2px solid #fff;
+  z-index: 10; /* Ensure it's above other content */
+}
+
+/* Adjust competitor-details to take available space */
+.competitor-details {
+  flex-grow: 1; /* Allows it to take up available vertical space between icon/name and tags */
+  display: flex; /* Make competitor-details a flex container */
+  position: absolute; /* Keep it absolutely positioned for the top-center badge */
+  top: -15px; /* Adjust top position to place above the card */
+  left: 5%;
+  flex-direction: column; /* Stack its children (h3, p) vertically */
+  justify-content: center; /* Vertically center its own content */
+  align-items: center; /* Horizontally center its own content */
+  padding-top: 20px; /* Add some padding to push content down from the rank */
+}
+
+.competitor-details h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.25rem;
+  
+  /* text-align: center; This might be redundant if competitor-details has align-items: center */
+}
+
+.competitor-details p {
+  font-size: 0.95rem;
+  color: #555;
+  position: absolute; /* Keep it absolutely positioned for the top-center badge */
+  top: 75px; /* Adjust top position to place above the card */
+  left: 5%;
+  width: 300px;
+  margin-bottom: 0; /* Remove default margin-bottom to avoid extra space */
+  flex-grow: 1; /* Allow description to take available space if needed */
+  display: flex; /* Make it a flex item to center its text if short */
+  align-items: center; /* Center text vertically if it's short */
+  justify-content: center; /* Center text horizontally if it's short */
+}
+
+.competitor-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centers tags horizontally at the bottom */
+  gap: 0.5rem;
+  position: absolute; /* Keep it absolutely positioned for the top-center badge */
+  top: 155px; /* Adjust top position to place above the card */
+  left: 7%;
+  /* Removed margin-top, as justify-content handles spacing now */
+  padding-bottom: 0.5rem;
+   /* Small padding from the bottom edge */
+}
+.tag {
+  padding: 0.4rem 0.8rem;
+  border-radius: 9999px; /* Pill shape */
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Tag colors (light theme compatible) */
+.bg-green-light { background-color: #d4edda; } .text-green-dark { color: #155724; }
+.bg-blue-light { background-color: #cce5ff; } .text-blue-dark { color: #004085; }
+.bg-yellow-light { background-color: #fff3cd; } .text-yellow-dark { color: #856404; }
+.bg-red-light { background-color: #f8d7da; } .text-red-dark { color: #721c24; }
+.bg-purple-light { background-color: #e2d9f3; } .text-purple-dark { color: #4b0082; }
+.bg-teal-light { background-color: #d1ecf1; } .text-teal-dark { color: #006064; }
+
+/* Get Insights Button */
+.get-insights-button-container {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.get-insights-button {
+  background-color: #6a0dad; /* Purple */
+  color: white;
+  font-weight: bold;
+  padding: 0.8rem 2.5rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(106, 13, 173, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.get-insights-button:hover {
+  background-color: #5a0ca0;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(106, 13, 173, 0.4);
+}
+
+/* Dual Section Container (for Sentiment and Customer Segmentation) */
+.dual-section-container {
+  display: grid;
+  grid-template-columns: 1fr; /* Stack on small screens */
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 1024px) { /* Larger screens for side-by-side */
+  .dual-section-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.dual-section-item {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+/* Sentiment/Segment Display Card */
+.sentiment-segment-card {
+  background-color: #ffffff;
+  padding: 1.2rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem; /* Space between items within the section */
+  transition: transform 0.2s ease;
+}
+
+.sentiment-segment-card:hover {
+  transform: translateY(-3px);
+}
+
+.sentiment-segment-label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0.4rem;
+}
+
+.sentiment-segment-description {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 0.6rem;
+}
+
+.progress-bar-background {
+  width: 100%;
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 8px 0;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+/* Optional: for value text */
+.sentiment-segment-value,
+.geo-distribution-value {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+
+/* Progress bar colors */
+.bg-blue-primary { background-color: #2563eb; }
+.bg-green-primary { background-color: #10b981; }
+.bg-red-primary { background-color: #ef4444; }
+.bg-purple-primary { background-color: #9333ea; }
+.bg-teal-primary { background-color: #14b8a6; }
+.bg-pink-primary { background-color: #ec4899; }
+.bg-yellow-primary { background-color: #f59e0b; }
+
+.sentiment-segment-value {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #333;
+  display: block; /* Ensure it's on its own line */
+}
+
+/* Audience Tracking Section */
+.audience-tracking-section {
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  background-color: #ebf1f5; /* Light background */
+}
+
+.audience-tracking-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Stack on small screens */
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) { /* Medium screens for 2 columns */
+  .audience-tracking-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) { /* Larger screens for 3 columns */
+  .audience-tracking-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.audience-tracking-subsection {
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.audience-tracking-subsection.section-light {
+  background-color: #ffffff; /* White cards inside light section */
+}
+
+.audience-tracking-subsection.section-dark {
+  background-color: #f0f8ff; /* Slightly off-white for contrast */
+}
+
+.subsection-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.subsection-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* Audience Metric Display (for age, behavior) */
+.audience-metric-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee; /* Subtle separator */
+}
+
+.audience-metric-card:last-child {
+  border-bottom: none;
+}
+
+.audience-metric-label {
+  font-size: 1rem;
+  color: #333;
+}
+
+.audience-metric-value-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.audience-metric-value {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.audience-metric-change {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Geographic Distribution specific styles */
+.geo-distribution-item {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.geo-distribution-item:last-child {
+  border-bottom: none;
+}
+
+.geo-distribution-label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.2rem;
+}
+
+.geo-distribution-value {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #2c3e50;
+  display: block;
+  margin-top: 0.2rem;
+}
+
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .competitor-entry-card {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+  .competitor-icon {
+    margin-bottom: 0;
+    margin-right: 1rem;
+  }
+  .competitor-details {
+    flex-grow: 1;
+  }
+  .competitor-tags {
+    margin-top: 0;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-main-title {
+    font-size: 2rem;
+  }
+  .section-title {
+    font-size: 1.5rem;
+  }
+  .card h3 {
+    font-size: 1.1rem;
+  }
+  .card p {
+    font-size: 0.9rem;
+  }
+  .competitor-icon {
+    font-size: 2rem;
+  }
+  .competitor-details h3 {
+    font-size: 1.1rem;
+  }
+  .competitor-details p {
+    font-size: 0.85rem;
+  }
+  .tag {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+  .get-insights-button {
+    font-size: 1rem;
+    padding: 0.7rem 2rem;
+  }
+  .sentiment-segment-label {
+    font-size: 1rem;
+  }
+  .sentiment-segment-value {
+    font-size: 0.85rem;
+  }
+  .audience-metric-label, .geo-distribution-label {
+    font-size: 0.9rem;
+  }
+  .audience-metric-value, .geo-distribution-value {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,96 @@
+/* Container covers full viewport with background */
+.signin-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EBF1F5;  /* page background */
+  margin: 0;
+  padding: 0;
+}
+
+/* Card styling with hover scale and shadow */
+.signin-card {
+  width: 400px;
+  padding: 2.5rem 2.5rem;
+  background-color: hsl(199, 40%, 64%);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signin-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Title styling */
+.signin-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: black;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Inputs style */
+.signin-input {
+  width: 80%; 
+  margin-left: auto; 
+  margin-right: auto; /* Centers the block-level element horizontally */
+  display: block;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: black;
+  background-color: white;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.signin-input::placeholder {
+  color: #777;
+}
+
+.signin-input:focus {
+  border-color: #75A4C7;
+}
+
+/* Button style with hover lift */
+.signin-button {
+  width: 100%;
+  padding: 0.75rem 0;
+  background-color: #EBF1F5;
+  color: black;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signin-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer text */
+.signin-footer-text {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: black;
+  font-size: 0.875rem;
+}
+
+/* Link styling */
+.signin-link {
+  color: black;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.signin-link:hover {
+  color: #75A4C7;
+}

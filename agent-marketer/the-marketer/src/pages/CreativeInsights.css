@@ -1,0 +1,88 @@
+/* CreativeInsights.css */
+
+.creative-page {
+  padding: 2rem;
+  background-color: #EBF1F5; /* Light background */
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.creative-heading {
+  text-align: center;
+  font-size: 2rem;
+  color: hsl(199, 40%, 64%); /* Dark blue */
+  margin-bottom: 2rem;
+}
+
+.creative-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: hsl(199, 40%, 64%); /* Dark bluish box */
+  padding: 2rem;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.creative-input {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #000;
+}
+
+.improve-button {
+  background-color: #EBF1F5; /* Golden button */
+  color: #000;
+  border: none;
+  padding: 12px 20px;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.improve-button:hover {
+  background-color: #e6b800;
+}
+
+.error-message {
+  color: #e74c3c;
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.suggestions-section {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.suggestions-section h3 {
+  margin-bottom: 1rem;
+  color: #4682B4;
+  font-size: 1.2rem;
+}
+
+.suggestions-section ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.suggestions-section li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #333;
+}

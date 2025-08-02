@@ -1,0 +1,219 @@
+/* Base styles */
+.insight-container {
+    background-color: #ffffff; /* Page background is pure white */
+    color: #333;
+    min-height: 100vh;
+    padding: 3rem 2rem 2rem;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.insight-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.insight-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.insight-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1a3d7c;
+    margin-bottom: 0.5rem;
+}
+
+.insight-subheading {
+    font-size: 1.15rem;
+    color: #4e6e90;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 500;
+}
+
+/* Card layout for highlight-cards (Page Speed, SEO Score) */
+.insight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 0.75rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+
+.insight-action-list,
+.seo-card-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+
+/* Card styles (for smaller cards) - MODIFIED */
+.insight-card {
+    background: #E8F1F5;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05); 
+    text-align: center;
+    width: 280px;
+    border-left: none; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.insight-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+}
+
+/* Wide horizontal cards for Page Speed and SEO - MODIFIED */
+.highlight-card {
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    text-align: left;
+    border-left: 8px solid #7dafc7; 
+    background: #E8F1F5; /* ALL CARDS COLOR SET TO #E8F1F5 */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    min-width: 380px; 
+}
+
+/* Specific styling for elements WITHIN highlight-card */
+.highlight-card .card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #1a4d8d, #3f7bbf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.highlight-card .card-values {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1a4d8d;
+    margin-bottom: 1rem; /* Space below the numbers before description */
+}
+
+.highlight-card .sub-value {
+    font-size: 1.5rem;
+    margin-left: 0.3rem;
+    color: #7dafc7;
+}
+
+.highlight-card .card-description {
+    font-size: 0.9rem;
+    color: #4a6f8c;
+    margin-top: 0;
+    line-height: 1.4;
+}
+
+/* Regular card title (for smaller cards) */
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #204a85;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.card-values {
+    margin-bottom: 0.5rem;
+}
+
+.main-value {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #1a4d8d;
+}
+
+.sub-value {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #5598e6;
+    margin-left: 0.25rem;
+}
+
+.card-description {
+    font-size: 0.95rem;
+    color: #587fa8;
+    line-height: 1.4;
+}
+
+/* Subsection heading */
+.insight-subsection-heading {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+    text-align: center;
+    margin: 2.5rem 0 2rem;
+}
+
+/* SEO Section */
+.insight-seo {
+    margin-top: 3rem;
+}
+
+.seo-heading {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1d3557;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .insight-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .insight-action-list,
+    .seo-card-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-value {
+        font-size: 3rem;
+    }
+
+    .sub-value {
+        font-size: 1.5rem;
+    }
+
+    .card-description {
+        font-size: 0.9rem;
+    }
+
+    .insight-subsection-heading {
+        font-size: 1.5rem;
+    }
+
+    .seo-heading {
+        font-size: 1.4rem;
+    }
+
+    .highlight-card {
+        flex-direction: column; 
+        align-items: flex-start; /* Keep content left-aligned */
+        padding: 1.2rem;
+        text-align: left;
+        width: 90%;
+        min-width: auto;
+    }
+
+    .highlight-card .card-values {
+        font-size: 2rem;
+    }
+
+    .highlight-card .sub-value {
+        font-size: 1.2rem;
+    }
+}

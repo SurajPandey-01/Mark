@@ -1,0 +1,101 @@
+/* Container covers full viewport with background, no top padding now */
+.onboarding-container {
+  min-height: 100vh;
+  background-color: #EBF1F5;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  box-sizing: border-box;
+  padding-top: 2rem; /* small padding on top */
+}
+
+/* Card styles: slightly smaller width and padding */
+.onboarding-card {
+  background-color: #B2D0DE;
+  color: black;
+  max-width: 900px; /* smaller width */
+  min-width: 600px;
+  padding: 2rem 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: none;
+}
+
+/* Header */
+.onboarding-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.onboarding-title {
+  color:#000000;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Back button */
+.onboarding-back-btn {
+  background-color: #EBF1F5;
+  color: black;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.onboarding-back-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px 3px rgba(235, 241, 245, 0.8);
+}
+
+/* Intro paragraph */
+.onboarding-intro {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Step titles */
+.step-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+/* Step color updated to button blue (#EBF1F5 was too light, so use navbar blue) */
+.step-color {
+  color: #09b0fe;
+}
+
+/* Lists */
+.step-list {
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  color: #000000;
+  line-height: 1.5;
+  padding-left: 1rem;
+}
+
+.step-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* Footer text */
+.footer-text {
+  font-size: 1rem;
+  color: #4a4a4a;
+}
+
+/* Highlight colors changed to dark blue */
+.highlight-blue {
+  color: #119cdd;
+  font-weight: 600;
+}
